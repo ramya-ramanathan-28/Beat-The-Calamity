@@ -6,7 +6,7 @@ Team Members : Ramya Ramanathan, Sindhu B Dinesh, Malika Makker <br/>
 
 ### Topic : Disaster Management using Satellite Images and Social Media Posts
 
-#### Problem Statement : To build a robust disaster management system, which can be used to analyse an area post disaster, by drawing helpful insights from the satellite images and the social media posts of people regarding their state.
+#### Problem Statement : To build a robust disaster management system, which can be used to analyse an area post disaster and to assist the people in distress, by drawing helpful insights from the satellite images and the social media posts of people regarding their state.
 
 ### Components:
 #### 1. Tracing Usable Roads in a Damaged Area
