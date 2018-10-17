@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, json, session, url_for, redir
 #from passlib.hash import sha256_crypt
 import time
 import datetime
-from folder import image_diff
+#from folder import image_diff
 from folder import flooded_area_road_detection
 from folder import items2
 from pathlib import Path
@@ -58,7 +58,7 @@ def damage():
                 if 'before' in request.form and 'after' in request.form:
                         before = str(request.form['before'])
                         after = str(request.form['after'])
-                        image_diff.imageCompare(before, after)
+                        #image_diff.imageCompare(before, after)
                         return render_template("damage_results.html")
     
         return render_template("damage.html")
