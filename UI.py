@@ -9,6 +9,7 @@ from pathlib import Path
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 60
 #import MySQLdb
+'''
 import math  
 def calculateDistance(x1,y1,x2,y2):  
      dist = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)  
@@ -30,6 +31,8 @@ for item in Z:
     print(list_help)
     pos = input("Enter the index of things that can be supplied")
     list_help.pop(int(pos))
+
+'''
 
 @app.route("/trends", methods = ['POST', 'GET'])
 def trends():
