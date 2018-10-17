@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, json, session, url_for, redir
 #from passlib.hash import sha256_crypt
 import time
 import datetime
-from folder import image_diff
-from folder import flooded_area_road_detection
+#from folder import image_diff
+#from folder import flooded_area_road_detection
 from folder import items2
 from pathlib import Path
 app = Flask(__name__)
