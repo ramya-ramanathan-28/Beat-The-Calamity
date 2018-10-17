@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, json, session, url_for, redir
 #from passlib.hash import sha256_crypt
 import time
 import datetime
-import image_diff
-import flooded_area_road_detection
-import items2
+from folder import image_diff
+from folder import flooded_area_road_detection
+from folder import items2
 from pathlib import Path
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 60
@@ -34,9 +34,9 @@ for item in Z:
 
 '''
 
-@app.route("/trends", methods = ['POST', 'GET'])
+@app.route("/", methods = ['POST', 'GET'])
 def trends():
-        return render_template("catalog.html")
+        return render_template("road.html")
 
 @app.route("/road", methods = ['POST', 'GET'])
 def road():
