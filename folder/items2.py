@@ -1,6 +1,6 @@
 from nltk.tokenize import word_tokenize
 from nltk import ngrams
-import date
+from folder import date
 
 def get_ngrams(text, n ):
     n_grams = ngrams(word_tokenize(text), n)
