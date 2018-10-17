@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<title>The Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/493B7E57-1FA1-9D46-BE5A-D5077E791590/main.js" charset="UTF-8"></script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link href='/static/styles/totalcss.css' rel='stylesheet' type='text/css'>
+<style>
+body{
+background: url(https://subtlepatterns.com/patterns/scribble_light.png) #FFF;
+}
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+</style>
+<script>
+var sum = 0;
+
+function addrow(){
+  
+  if ((sum%4)==0)
+  {
+    document.write('<div class=\"w3-row\">');
+  }
+  sum=sum+1;
+
+}
+
+function addendrow(){
+  
+  if ((sum%4)==0)
+  {
+    document.write('</div>');
+  }
+  
+
+}
+
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+//$('id02').on('show.bs.modal', function(e) {
+//  var id = (e.relatedTarget).data(id);
+//});
+/*
+  $(function(){
+
+      $('#confirm-delete').on('shown.bs.modal', function(e) {
+
+          var button = $(e.relatedTarget);
+
+          // this refers to Modal
+          console.log(button.data('id'))
+          $('input', this).val(button.data('id'));
+
+          //$('.url', this).html('Delete URL: <strong>' + button.data('href') + '</strong>');
+      });
+});
+*/
+var id;
+$(document).ready(function() {
+
+    $('button[name = review]').click(function(){
+    id = $(this).attr('id');
+    $('#pid', '#100').val(id[2])
+    $('#pname', '#101').text(id[0])
+    $('#pdesc', '#101').text(id[1])
+    $('#price').text(id[3])
+
+    });
+
+
+});
+$(document).ready(function(e) {
+    if(!!window.performance && window.performance.navigation.type == 2)
+{
+window.location.reload();
+}
+});
+</script>
+
+
+<body>
+<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="w3_close()" class="w3-bar-item w3-medium w3-blue">Close &times;</button>
+  <a href="/change_password/{{custid}}" class="w3-bar-item w3-button w3-gray">Change Password</a>
+  <a href="/accountDetails/{{custid}}" class="w3-bar-item w3-button w3-gray">View Account Details</a>
+  <a href="/logout/{{custid}}" class="w3-bar-item w3-button w3-gray">Logout</a>
+</div>
+<!-- Page Content -->
+<div class="w3-black ">
+
+  <button class="w3-button w3-black w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+  <h1 style="text-align:left;font-weight:bold;">
+    BollyBuff
+  <span style="float:right;size:5px"></span>
+</h1>
+</div>
+<p> </p>
+
+
+  <div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button tablink" id = 'btncart' onclick="location.href = '/cart/{{custid}}'">Character Sketch</button>
+    <button class="w3-bar-item w3-button tablink w3-blue" id = 'btncatalog' onclick="openCity(event,'catalog')">Road Detection</button>
+    <button class="w3-bar-item w3-button tablink " id = 'btnhistory' onclick="location.href = '/orderHistory/{{custid}}'">Areas of damage</button>
+    <button class="w3-bar-item w3-button tablink" id = 'btnreq' onclick="location.href = '/requests/{{custid}}'">Request</button>
+  </div>
+
+
+  <div id="catalog" class="w3-container w3-border city" style="display:block" font-family: "Roboto", sans-serif>
+<!--
+    <h2>Looking to buy something?</h2>
+    <p>You're likely to find it in our catalog, so go ahead and pick a category to get started. Happy browsing!</p>
+-->
+    <!--<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="top:120px;z-index:3;width:250px" id="mySidebar">
+      <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+        {% for item in data %}
+        <form action = '/catalog/{{custid}}' method = "post">
+          <a href="javascript:;" onclick = "parentNode.submit();" class="w3-bar-item w3-button">{{item[0]}}</a>
+          <input type = "hidden" name = 'id' value = '{{item[0]}}'>
+        </form>
+        {% endfor %}
+        <p>
+		</div>
+		<div class="w3-padding-16 w3-large w3-text-grey" style="font-weight:bold">
+        <form action = '/search/{{custid}}' method = "post">
+          <a href="javascript:;" onclick = "parentNode.submit();" class="w3-bar-item w3-button">Search <i class="fa fa-search"></i></a>
+        </form>
+		</p>
+      </div>
+    </nav>
+
+    
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    
+    <div class="w3-main" style="margin-left:250px">
+
+      
+      <div class="w3-hide-large" style="margin-top:83px"></div>
+
+      
+      <header class="w3-container w3-xlarge">
+        <p class="w3-left">{{name}}</p>
+        <p class="w3-right">
+          <a href = "/cart/{{custid}}">
+          <i class="fa fa-shopping-cart w3-margin-right">({{number}})</i>
+        </a>
+        </p>
+      </header>
+
+      <input type="hidden" id="refresh" value="no">
+      
+		
+
+        {% for item in data2 %}
+			<script>addrow(); </script>
+          <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src={{item[4]}} style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                  <button  class="w3-button w3-black" onclick="location.href = '/viewProd/{{custid}}/{{item[2]}}'" >View</button>
+              </div>
+            </div>
+            <p>{{item[0]}}<br><b>Rs.{{item[3]}}</b></p>
+          </div>
+        </div>
+		<script>addendrow(); </script>
+          {% endfor %}
+
+      </div>
+
+
+
+
+      </div>
+ -->
+	<br/>
+	
+	<div class="w3-center"><img src='/static/images/road.jpg' class="w3-border w3-padding" style="width:800px;height:600px;"></div>
+	
+    </div>
+<!--
+    <div id="id02" class="w3-modal">
+       <div class="w3-modal-content">
+         <div class="w3-container">
+           <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+           <div id = '101'>
+             <p id = 'pname' value = ''/>
+             <p id = 'pdesc' value = ''/>
+             <p id = 'price' value = ''/>
+           </div>
+           <form action='/catalog' method = 'post' id='100'>
+        </br>
+        <p></p>
+        <input type = "hidden" name = 'pid' id = 'pid' value = ''/>
+        <label>Quantity</label>
+        <input type = 'number' min = '1'>
+        </br>
+        <button  class="w3-button w3-black" onclick = onclick="parentNode.submit();" >Buy Now</button>
+        </br>
+      </form>
+         </div>
+       </div>
+     </div>
+
+-->
+<script>
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+//document.getElementById("btncatalog").click();
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace("w3-gray", "w3-blue");
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace("w3-blue", "w3-gray");
+    }
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("rightMenu").style.display = "none";
+}
+function req_close(num) {
+    document.getElementById("Request"+num).style.display = "none";
+}
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-blue";
+}
+
+</script>
+
+</body>
+</html>
