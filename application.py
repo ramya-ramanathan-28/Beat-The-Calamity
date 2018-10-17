@@ -80,8 +80,7 @@ def helpcenter():
 
 @app.route("/map", methods = ['POST', 'GET'])
 def map():
-    
-        return render_template("map.html")
+            return render_template("map.html")
 
                          
 if __name__ == "__main__":
