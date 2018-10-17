@@ -4,7 +4,7 @@ import time
 import datetime
 #from folder import image_diff
 #from folder import flooded_area_road_detection
-from folder import items2
+#from folder import items2
 from pathlib import Path
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 60
