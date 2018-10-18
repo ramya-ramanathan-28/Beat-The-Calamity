@@ -45,7 +45,7 @@ def road():
                 
                 if 'image' in request.form:
                         image = str(request.form['image'])
-                        flooded_area_road_detection.road_detection(image)
+                        #flooded_area_road_detection.road_detection(image)
                         return render_template("road_results.html")
     
         return render_template("road.html")
@@ -58,7 +58,7 @@ def damage():
                 if 'before' in request.form and 'after' in request.form:
                         before = str(request.form['before'])
                         after = str(request.form['after'])
-                        image_diff.imageCompare(before, after)
+                        #image_diff.imageCompare(before, after)
                         return render_template("damage_results.html")
     
         return render_template("damage.html")
@@ -71,7 +71,7 @@ def helpcenter():
                 
                 if 'hashtag' in request.form:
                         hashtag = str(request.form['hashtag'])
-                        items = items2.fetch_items(hashtag)
+                        #items = items2.fetch_items(hashtag)
                         return render_template("helpcenter.html",  items = items)
     
         
