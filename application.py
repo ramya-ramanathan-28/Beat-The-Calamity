@@ -73,10 +73,25 @@ def helpcenter():
                         hashtag = str(request.form['hashtag'])
                         #items = items2.fetch_items(hashtag)
                         return render_template("helpcenter.html",  items = items)
-    
-        
+                items2=[]
+                for item in items:
+                        if item in request.form:
+                                print(item)
+                                items2.append(item)
+                for item in items2:
+                        items.remove(item)
+                return render_template("helpcenter.html",  items = items)
+                        
         return render_template("twitter.html")
 
+@app.route("/twitter", methods = ['POST', 'GET'])
+def rerendering():
+
+        if request.method == 'POST' :
+                for item in items:
+                        if request.form[item]:
+                                print(item)
+                return render_template("helpcenter.html",  items = items)
 
 @app.route("/map", methods = ['POST', 'GET'])
 def map():

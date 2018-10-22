@@ -189,10 +189,10 @@ window.location.reload();
 	<br/>
 	
 	
-	 <form class="w3-container w3-center" method = 'POST' formaction="/tweets">
+	 <form class="w3-container w3-center" method = 'POST' formaction="/twitter">
     
 		{% for item in items %}
-			<input type = "checkbox" id = {{item}}>{{item}}</p>
+			<input type = "checkbox" name = {{item}}>{{item}}</p>
           {% endfor %}
 <button class ="w3-button w3-black" onclick="parentNode.submit();" onclick="location:href ='/twitter'"> Find necessities </button>
 
