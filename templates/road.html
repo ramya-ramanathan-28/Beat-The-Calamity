@@ -69,15 +69,15 @@
 
 
   <div class="w3-bar w3-black">
-    <button class="w3-bar-item w3-button tablink" id = 'btncart' onclick="location.href = '/cart/{{custid}}'">Character Sketch</button>
-    <button class="w3-bar-item w3-button tablink  w3-blue" id = 'btncatalog' onclick="openCity(event,'catalog')"> Road Detection</button>
-    <button class="w3-bar-item w3-button tablink" id = 'btnhistory' onclick="location.href = '/orderHistory/{{custid}}'">Areas of damage</button>
-    <button class="w3-bar-item w3-button tablink" id = 'btnreq' onclick="location.href = '/requests/{{custid}}'">Request</button>
+    <button class="w3-bar-item w3-button tablink w3-blue" id = 'btncart' onclick="openCity(event,'catalog')">Road Detection</button>
+    <button class="w3-bar-item w3-button tablink " id = 'btncatalog' onclick="location.href = '/map'"> Stranded people detection </button>
+    <button class="w3-bar-item w3-button tablink" id = 'btnhistory' onclick="location.href = '/helpcenter'">Helpcenters</button>
+    <button class="w3-bar-item w3-button tablink" id = 'btnreq' onclick="location.href = '/damage'"> Damaged Areas</button>
   </div>
 
 
 
-  <div id="cart" class="w3-container w3-border city" style="display:block" font-family: "Roboto", sans-serif>
+  <div id="catalog" class="w3-container w3-border city" style="display:block" font-family: "Roboto", sans-serif>
 
 
   <form class="w3-container w3-center" method = 'POST' formaction="/tweets">
