@@ -33,7 +33,7 @@ for item in Z:
     list_help.pop(int(pos))
 
 '''
-
+items=['table', 'dal', 'rice', 'mug', 'diapers', 'water']
 @app.route("/", methods = ['POST', 'GET'])
 def trends():
         return render_template("road.html")
