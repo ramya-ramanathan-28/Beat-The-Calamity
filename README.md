@@ -29,7 +29,7 @@ Install all the required dependencies and execute python application.py and the 
 It is also hosted as beat-the-calamity.azurewebsites.net <br/>
 
 ### Find our documentation : beat the calamity.pptx and beat-the-calamity.documentation <br/>
-Youtube link: https://youtu.be/jhUAYnh_tzk  <br/>
+Youtube link: https://youtu.be/kmBXSR86L1Q  <br/>
 
 ### Find in our repository : application.py - a python flask based 
 date.py - fetches tweets for a given duration and hashtag <br/>
