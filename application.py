@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, json, session, url_for, redir
 #from passlib.hash import sha256_crypt
 import time
 import datetime
-#from folder import image_diff
-#from folder import flooded_area_road_detection
-#from folder import items2
+from folder import image_diff
+from folder import flooded_area_road_detection
+from folder import items2
 from pathlib import Path
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 60
@@ -62,7 +62,7 @@ def road():
                 
                 if 'image' in request.form:
                         image = str(request.form['image'])
-                        #flooded_area_road_detection.road_detection(image)
+                        flooded_area_road_detection.road_detection(image)
                         return render_template("road_results.html")
     
         return render_template("road.html")
@@ -75,7 +75,7 @@ def damage():
                 if 'before' in request.form and 'after' in request.form:
                         before = str(request.form['before'])
                         after = str(request.form['after'])
-                        #image_diff.imageCompare(before, after)
+                        image_diff.imageCompare(before, after)
                         return render_template("damage_results.html")
     
         return render_template("damage.html")
@@ -121,7 +121,8 @@ def helpcenter():
                 
                 if 'hashtag' in request.form:
                         hashtag = str(request.form['hashtag'])
-                        #items = items2.fetch_items(hashtag)
+                        global items
+                        items = items2.fetch_items(hashtag)
                         return redirect(url_for('centers'))
         return render_template("twitter.html")
 
