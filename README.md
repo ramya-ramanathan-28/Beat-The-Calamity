@@ -26,7 +26,7 @@ The nearest help centers can be identified and if none are found in the immediat
 
 ### How to run our application : 
 Install all the required dependencies and execute python application.py and the application runs on localhost <br/>
-It is also hosted as beat-the-calamity.azurewebsites.network <br/>
+It is also hosted as beat-the-calamity.azurewebsites.net <br/>
 
 ### Find our documentation : beat the calamity.pptx and beat-the-calamity.documentation <br/>
 Youtube link: https://youtu.be/jhUAYnh_tzk  <br/>
