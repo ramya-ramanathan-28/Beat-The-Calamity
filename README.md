@@ -38,6 +38,7 @@ image_diff.py - used to identify damages areas <br/>
 tensorflow-human-detection.py - uses object detection to identify people <br/>
 map.py - used to plot stranded people <br/>
 items2.py - used to identify necessary items <br/> 
+week.py and sentiment.py - used to render sentiment trend <br/> 
 templates folder - contains all the front end HTML files <br/>
  
 
