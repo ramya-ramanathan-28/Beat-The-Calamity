@@ -25,13 +25,15 @@ Based on the number of requests received and the level of damage of a particular
 The nearest help centers can be identified and if none are found in the immediate neighbourhood, radius can be extended to locate the next closest center. The location of the help centers will be fed to the system and based on the user location, the closest help center would be suggested.
 
 ### How to run our application : 
-Install all the required dependencies and execute python application.py and the application runs on localhost <br/>
-It is also hosted as beat-the-calamity.azurewebsites.net <br/>
+-Install all the required dependencies and execute python application.py and the application runs on localhost <br/>
+-It is also hosted at beat-the-calamity.azurewebsites.net <br/>
 
-### Find our documentation : beat the calamity.pptx and beat-the-calamity.documentation <br/>
-Youtube link: https://youtu.be/kmBXSR86L1Q  <br/>
+### Find our documentation : 
+-beat the calamity.pptx and beat-the-calamity.docx <br/>
+-Youtube link: https://youtu.be/kmBXSR86L1Q  <br/>
 
-### Find in our repository : application.py - a python flask based 
+### Find in our repository : 
+application.py - a python flask based 
 date.py - fetches tweets for a given duration and hashtag <br/>
 flooded_area_road_detection.py - used to identify roads during floods <br/>
 image_diff.py - used to identify damages areas <br/>
